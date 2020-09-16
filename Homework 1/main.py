@@ -1,27 +1,29 @@
 # Alejandra Castillo 1440370
-import math
-paint = {
-    'red': 35,
-    'blue': 25,
-    'green': 23
+service = {
+    'Oil change': 35, 'Tire rotation': 19, 'Car wash': 7, 'Car wax': 12, '-': 0
 }
-print('Enter wall height (feet):')
-wall_height = int(input())
-print('Enter wall width (feet):')
-wall_width = int(input())
-wall_area = wall_height * wall_width
-print('Wall area:', wall_area, 'square feet')
+print("Davy's auto shop services")
+print('Oil change -- $35')
+print('Tire rotation -- $19')
+print('Car wash -- $7')
+print('Car wax -- $12')
 
-# one_gallon = 350
-paint_needed = wall_area / 350
-print('Paint needed:', '{:.2f}'.format(paint_needed), 'gallons')
+print('\nSelect first service:')
+service_one = input()
+print('Select second service:')
+service_two = input()
 
-paint_cans = math.ceil(paint_needed)
-print('Cans needed:', '{:.2f}'.format(paint_cans), 'can(s)')
-
-print('\nChoose a color to paint the wall:')
-paint_color = input()
-if paint_color in paint:
-    price = paint[paint_color]
-    total = int(price) * paint_cans
-    print('Cost of purchasing', paint_color, 'paint: $', '{:.2f}'.format(total))
+print("\nDavy's auto shop invoice")
+if service_one != '-' and service_two != '-':
+    print('\nService 1:', service_one, ', ${}'.format((service[service_one])))
+    print('Service 2:', service_two, ', ${}'.format((service[service_two])))
+    total_price = service[service_one] + service[service_two]
+elif service_one == '-':
+    print('\nService 1:', 'No service')
+    print('Service 2:', service_two, ', ${}'.format((service[service_two])))
+    total_price = service[service_two]
+else:
+    print('\nService 1:', service_one, ', ${}'.format((service[service_one])))
+    print('Service 2:', 'No service')
+    total_price = service[service_one]
+print('\nTotal: ${}'.format(total_price))
