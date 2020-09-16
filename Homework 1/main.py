@@ -15,15 +15,15 @@ service_two = input()
 
 print("\nDavy's auto shop invoice")
 if service_one != '-' and service_two != '-':
-    print('\nService 1:', service_one, ', ${}'.format((service[service_one])))
-    print('Service 2:', service_two, ', ${}'.format((service[service_two])))
+    print('\nService 1: {},'.format(service_one), '${}'.format((service[service_one])))
+    print('Service 2: {},'.format(service_two), '${}'.format((service[service_two])))
     total_price = service[service_one] + service[service_two]
 elif service_one == '-':
     print('\nService 1:', 'No service')
-    print('Service 2:', service_two, ', ${}'.format((service[service_two])))
+    print('Service 2: {},'.format(service_two), '${}'.format((service[service_two])))
     total_price = service[service_two]
 else:
-    print('\nService 1:', service_one, ', ${}'.format((service[service_one])))
+    print('\nService 1: {},'.format(service_one), '${}'.format((service[service_one])))
     print('Service 2:', 'No service')
     total_price = service[service_one]
 print('\nTotal: ${}'.format(total_price))
