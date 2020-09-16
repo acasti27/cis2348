@@ -1,28 +1,38 @@
 # Alejandra Castillo 1440370
-import math
-paint = {
-    'red': 35,
-    'blue': 25,
-    'green': 23
-}
-print('Enter wall height (feet):')
-wall_height = int(input())
-print('Enter wall width (feet):')
-wall_width = int(input())
-wall_area = int(wall_height * wall_width)
-print('Wall area:', wall_area, 'square feet')
+print('Enter amount of lemon juice (in cups):')
+lemon_juice = float(input())
+print('Enter amount of water (in cups):')
+water = float(input())
+print('Enter amount of agave nectar (in cups):')
+agave_nectar = float(input())
+print('How many servings does this make?')
+serving_size = float(input())
 
-area_gallon = float(1/350)
-paint_needed = wall_area * area_gallon
+print('\nLemonade ingredients - yields',  '{:.2f}'.format(serving_size),  'servings')
+print('{:.2f}'.format(lemon_juice), 'cup(s) lemon juice')
+print('{:.2f}'.format(water), 'cup(s) water')
+print('{:.2f}'.format(agave_nectar),  'cup(s) agave nectar')
 
-print('Paint needed:', '{:.2f}'.format(paint_needed), 'gallons')
+print('\nHow many servings would you like to make?')
+serving_needed = float(input())
+lemon_juice_one = lemon_juice / serving_size
+water_one = water / serving_size
+agave_nectar_one = agave_nectar / serving_size
+lemon_needed = lemon_juice_one * serving_needed
+water_needed = water_one * serving_needed
+agave_needed = agave_nectar_one * serving_needed
 
-paint_cans = math.ceil(paint_needed)
-print('Cans needed:', '{:.2f}'.format(paint_cans), 'can(s)')
+print('\nLemonade ingredients - yields',  '{:.2f}'.format(serving_needed), 'servings')
+print('{:.2f}'.format(lemon_needed), 'cup(s) lemon juice')
+print('{:.2f}'.format(water_needed), 'cup(s) water')
+print('{:.2f}'.format(agave_needed),  'cup(s) agave nectar')
 
-print('\nChoose a color to paint the wall:')
-paint_color = input()
-if paint_color in paint:
-    price = paint[paint_color]
-    total = int(price) * paint_cans
-    print('Cost of purchasing', paint_color, 'paint:', '${:.2f}'.format(total))
+
+lemon_juice_gallon = lemon_needed / 16
+water_gallon = water_needed / 16
+agave_gallon = agave_needed / 16
+
+print('\nLemonade ingredients - yields', '{:.2f}'.format(serving_needed), 'servings')
+print('{:.2f}'.format(lemon_juice_gallon), 'gallon(s) lemon juice')
+print('{:.2f}'.format(water_gallon), 'gallon(s) water')
+print('{:.2f}'.format(agave_gallon), 'gallon(s) agave nectar')
