@@ -1,6 +1,6 @@
 # Alejandra Castillo 1440370
 # Creating a dictionary for the months
-months = {
+months_list = {
     'january': 1,
     'february': 2,
     'march': 3,
@@ -23,3 +23,11 @@ for date in in_file:
             month = lis[0]
             day = lis[1]
             year = lis[2]
+# formatting
+            if month.lower() in months_list:
+                comma = day[-1]
+                day = day[:len(day)-1]
+                month_number = months_list(month.lower())
+                ans = month_number+'/'+day+'/'+year
+                print(ans)
+
