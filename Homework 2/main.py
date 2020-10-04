@@ -1,15 +1,25 @@
-# Alejandra Castillo 1440370
-# exact change - functions
-#
-# defines the exact change function needed
-def exact_change(user_total):
-    num_dollars = user_total // 100
-    user_total = user_total % 100
-    num_quarters = user_total // 35
-    user_total = user_total % 25
-    num_dimes = user_total // 10
-    user_total = user_total % 10
-    num_nickels = user_total // 5
-    user_total = user_total % 5
-    num_pennies = user_total
-    return num_dollars, num_quarters, num_dimes, num_nickels, num_pennies
+# Alejandra Castillo 1440270
+# palindrome
+# basic declaration for any given input
+string = input()
+begin = 0
+end = len(string)-1
+result = True
+# while loop and if,else if,else statements in order to declare the conditions in which a word is a palindrome
+while begin < end:
+    if string[begin] == '':
+        begin += 1
+    elif string[end] == '':
+        end -= 1
+    elif string[begin] != string[end]:
+        result = False
+        break
+# putting a break at the end to stop the loop in order to keep the code from printing out multiples
+    else:
+        begin += 1
+        end -= 1
+        if result:
+            print(string, 'is a palindrome')
+        else:
+            print(string, 'is not a palindrome')
+        break
