@@ -1,6 +1,5 @@
 # Alejandra Castillo 1440370
 # exact change - functions
-
 if __name__ == '__main__':
     user_total = int(input())
 # exact change function
