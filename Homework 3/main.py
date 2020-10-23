@@ -27,11 +27,13 @@ if __name__ == '__main__':
     item_two.item_price = int(input('Enter the item price:\n'))
     item_two.item_quantity = int(input('Enter the item quantity:\n'))
 
-# This is the equation for the total cost
+# This is the equation for the total cost as well as individual costs
     total_cost = item_one.item_price * item_one.item_quantity + item_two.item_price * item_two.item_quantity
+    total_cost1 = item_one.item_price * item_one.item_quantity
+    total_cost2 = item_two.item_price * item_two.item_quantity
 
-    print('TOTAL COST')
-    item_one.print_item_cost()
-    item_two.print_item_cost()
+    print('\nTOTAL COST')
+    print('{} {} @ ${} = {}'.format(item_one.item_name, item_one.item_quantity, item_one.item_price, total_cost1))
+    print('{} {} @ ${} = {}'.format(item_two.item_name, item_two.item_quantity, item_two.item_price, total_cost2))
 
-    print('Total: $' + str(total_cost))
+    print('\nTotal: $' + str(total_cost))
