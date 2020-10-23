@@ -9,22 +9,23 @@ class ItemToPurchase:
 
 # for item costs
     def print_item_cost(self):
-        print(self.item_name + '', str(self.item_quantity), '@$', str(self.item_price), '=$', str(self.item_price
+        print(self.item_name + '' + str(self.item_quantity) + '@$' + str(self.item_price) + '=$' + str(self.item_price
               * self.item_quantity))
+
 
 # this will ask the user to enter two items amd their prices and quantities
 if __name__ == '__main__':
     print('Item 1')
     item_one = ItemToPurchase()
-    item_one.item_name = input('Enter the item name: \n')
-    item_one.item_price = int(input('Enter the item price: \n'))
-    item_one.item_quantity = int(input('Enter the item quantity: \n'))
+    item_one.item_name = input('Enter the item name:\n')
+    item_one.item_price = int(input('Enter the item price:\n'))
+    item_one.item_quantity = int(input('Enter the item quantity:\n'))
 
-    print('Item 2')
+    print('\nItem 2')
     item_two = ItemToPurchase()
-    item_two.item_name = input('Enter the item name: \n')
-    item_two.item_price = int(input('Enter the item price: \n'))
-    item_two.item_quantity = int(input('Enter the item quantity: \n'))
+    item_two.item_name = input('Enter the item name:\n')
+    item_two.item_price = int(input('Enter the item price:\n'))
+    item_two.item_quantity = int(input('Enter the item quantity:\n'))
 
 # This is the equation for the total cost
     total_cost = item_one.item_price * item_one.item_quantity + item_two.item_price * item_two.item_quantity
