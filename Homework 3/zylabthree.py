@@ -7,11 +7,6 @@ class ItemToPurchase:
         self.item_price = 0.0
         self.item_quantity = 0
 
-# for item costs
-    def print_item_cost(self):
-        print(self.item_name + '' + str(self.item_quantity) + '@$' + str(self.item_price) + '=$' + str(self.item_price
-              * self.item_quantity))
-
 
 # this will ask the user to enter two items amd their prices and quantities
 if __name__ == '__main__':
