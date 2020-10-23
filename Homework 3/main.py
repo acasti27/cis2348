@@ -1,5 +1,6 @@
 # Alejandra Castillo 1440370
 # Nutritional information
+# class definition to be included
 class FoodItem:
     # TODO: Define constructor with parameters to initialize instance
     #       attributions (name, fat, carbs, protein)
@@ -11,12 +12,11 @@ class FoodItem:
         self.carbs = carbs
         self.protein = protein
 
-        # cal info
-
+# calorie information and formula
     def get_calories(self, num_servings):
         calories = ((self.fat * 9) + (self.carbs * 4) + self.protein * 4) * num_servings
         return calories
-
+# prints out the results in a specific format
     def print_info(self):
         print('Nutritional information per serving of {}:'.format(self.name))
         print('   Fat: {:.2f} g'.format(self.fat))
