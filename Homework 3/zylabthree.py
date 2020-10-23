@@ -33,7 +33,7 @@ if __name__ == '__main__':
     total_cost2 = item_two.item_price * item_two.item_quantity
 
     print('\nTOTAL COST')
-    print('{} {} @ ${} = {}'.format(item_one.item_name, item_one.item_quantity, item_one.item_price, total_cost1))
-    print('{} {} @ ${} = {}'.format(item_two.item_name, item_two.item_quantity, item_two.item_price, total_cost2))
+    print('{} {} @ ${} = ${}'.format(item_one.item_name, item_one.item_quantity, item_one.item_price, total_cost1))
+    print('{} {} @ ${} = ${}'.format(item_two.item_name, item_two.item_quantity, item_two.item_price, total_cost2))
 
     print('\nTotal: $' + str(total_cost))
