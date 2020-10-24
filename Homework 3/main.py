@@ -21,6 +21,39 @@ class ShoppingCart:
         self.current_date = 'January 1,2016'
         self.cart_items = []
 
+# this it to be able to add things to the shopping cart
+    def add_item(self, item_purchase):
+        self.cart_items.append(item_purchase)
+
+# this is to be able to remove things from the shopping cart
+    def remove_item(self, item_name2):
+        item_removal = False
+        for item in self.cart_items:
+            if item.item_name == item_name2:
+                self.cart_items.remove(item)
+                item_removal = True
+                break
+        if not item_removal:
+            print('Item not found in the cart. Nothing removed')
+
+# this is to be able to modify the items in the shopping cart
+    def modify_item(self, item_purchase):
+        item_modify = False
+        for i in range(len(self.cart_items)):
+            if self.cart_items[i].item_name == item_purchase.item_name:
+                item_modify = True
+                self.cart_items[i].item_quantity == item_purchase.item_quantity
+                break
+        if not item_modify:
+            print('Item not found in the cart. Nothing modified')
+
+    def get_num_items_in_carts(self):
+        num_items = 0
+        for item in self.cart_items:
+            num_items = num_items + item.item_quantity
+        return num_items
+
+
 # this will ask the user to enter two items amd their prices and quantities
 if __name__ == '__main__':
     print('Item 1')
