@@ -22,11 +22,14 @@ for i in range(5):
 
 # prints out a menu with quitting being the only working option to select
 # added option o as a working option
+# added a as a working option
 while True:
     print('\n MENU \n a - Add player \n d - Remove player \n u - Update player rating'
           '\n r - Output players above a rating \n o - Output roster \n q - Quit')
     option = input('\n Choose an option:')
     if option == 'o':
         print_roster()
+    elif option == 'a':
+        jersey_num = int(input("Enter a new player's jersey number: \n"))
     if option == 'q':
         break
