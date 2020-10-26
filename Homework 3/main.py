@@ -15,3 +15,11 @@ keys.sort()
 print('ROSTER')
 for key in keys:
     print('Jersey number: %d, Rating: %d' % (key, players[key]))
+
+# prints out a menu with quitting being the only working option to select
+while True:
+    print('\n MENU \n a - Add player \n d - Remove player \n u - Update player rating'
+          '\n r - Output players above a rating \n o - Output roster \n q - Quit')
+    option = input('\n Choose an option:')
+    if option == 'q':
+        break
