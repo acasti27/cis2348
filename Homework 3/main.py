@@ -31,5 +31,7 @@ while True:
         print_roster()
     elif option == 'a':
         jersey_num = int(input("Enter a new player's jersey number: \n"))
+        rating = int(input("Enter the player's rating: \n"))
+        players[jersey_num] = rating
     if option == 'q':
         break
