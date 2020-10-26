@@ -23,6 +23,7 @@ for i in range(5):
 # prints out a menu with quitting being the only working option to select
 # added option o as a working option
 # added a as a working option
+# added d as a working option
 while True:
     print('\n MENU \n a - Add player \n d - Remove player \n u - Update player rating'
           '\n r - Output players above a rating \n o - Output roster \n q - Quit')
@@ -33,5 +34,9 @@ while True:
         jersey_num = int(input("Enter a new player's jersey number: \n"))
         rating = int(input("Enter the player's rating: \n"))
         players[jersey_num] = rating
+    elif option == 'd':
+        jersey_num = int(input("Enter a player's jersey number: \n"))
+        if jersey_num in list(players.keys()):
+            del players[jersey_num]
     if option == 'q':
         break
