@@ -55,3 +55,23 @@ class ShoppingCart:
         for item in self.cart_items:
             total_quantity = total_quantity + item.item_quantity
             return total_quantity
+
+    # returning total cost
+    def get_cost_of_cart(self):
+        total_cost = 0
+        for item in self.cart_items:
+            total_cost = (item.item_price * item.item_quantity)
+        return total_cost
+
+    # for printing the total cost of the cart
+    def print_total(self):
+        total_cost = self.get_cost_of_cart()
+        if total_cost == 0:
+            print('SHOPPING CART IS EMPTY')
+        else:
+            print("{}'s Shopping Cart - {}".format(self.customer_name, self.current_date))
+            print('Number of items: %d' % self.get_num_items_in_cart())
+            for item in self.cart_items:
+                total = item.item_price * item.item_quantity
+                print('%s %d @  $%d = $%d' % (item.item_name, item.item_quantity, item.item_price, total))
+            print('Total: $%d' % total_cost)
