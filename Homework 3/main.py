@@ -27,3 +27,25 @@ class ShoppingCart:
         self.customer_name = 'none'
         self.current_date = 'January 1,2016'
         self.cart_items = []
+
+    # defining adding an item
+    def add_item(self):
+        self.cart_items.append(ItemToPurchase)
+
+    # defining item removal
+    def remove_item(self, item_name):
+        for item in self.cart_items:
+            if item.item_name == item_name:
+                self.cart_items.remove(item)
+                return
+            else:
+                print('Item not found in cart. Nothing removed.')
+
+    # defining item modification
+    def modify_item(self, item):
+        for item in self.cart_items:
+            if item.item_name == ItemToPurchase.item_name:
+                new_quantity = int(input('Enter the new quantity:'))
+            else:
+                print('Item not found in cart. Nothing modified.')
+
