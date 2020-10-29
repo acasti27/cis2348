@@ -75,3 +75,15 @@ class ShoppingCart:
                 total = item.item_price * item.item_quantity
                 print('%s %d @  $%d = $%d' % (item.item_name, item.item_quantity, item.item_price, total))
             print('Total: $%d' % total_cost)
+
+    # printing out item descriptions
+    def print_descriptions(self):
+        print("{}'s Shopping Cart - {}".format(self.customer_name, self.customer_name))
+        print('\nItem Descriptions')
+        for item in self.cart_items:
+            item.print_item_description()
+
+
+# defining the class to print out the menu of options
+def print_menu():
+
