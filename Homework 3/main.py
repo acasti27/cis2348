@@ -49,3 +49,9 @@ class ShoppingCart:
             else:
                 print('Item not found in cart. Nothing modified.')
 
+    # for returning item quantity
+    def get_num_items_in_cart(self):
+        total_quantity = 0
+        for item in self.cart_items:
+            total_quantity = total_quantity + item.item_quantity
+            return total_quantity
