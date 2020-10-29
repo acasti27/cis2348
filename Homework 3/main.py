@@ -86,4 +86,51 @@ class ShoppingCart:
 
 # defining the class to print out the menu of options
 def print_menu():
+    while True:
+        print('\nMENU\na - Add item to cart\nr - Remove item from cart\nc-Change item quantity\n'
+              "i - Output items' descriptions\no - Output shopping cart\nq - Quit")
+        option = input('\nChoose an option:\n')
+        if option == 'a':
+            print('\nADD ITEM TO CART')
+            item_name = input('Enter the item name:\n')
+            item_description = input('Enter the item description:\n')
+            item_price = int(input('Enter the item price:\n'))
+            item_quantity = int(input('Enter the item quantity:\n'))
+          #  ItemToPurchase = ItemToPurchase(item_name, item_description, item_price, item_quantity)
+        elif option == 'r':
+            print('\nREMOVE ITEM FROM CART')
+            remove = input('Enter name of item to remove:')
+        elif option == 'c':
+            print('\nCHANGE ITEM QUANTITY')
+            name = int('Enter the item name:')
+        elif option == 'i':
+            print("\nOUTPUT ITEMS' DESCRIPTIONS")
+        elif option == 'o':
+            print('\nOUTPUT SHOPPING CART')
+        return option
 
+# adding the main code back in
+if __name__ == '__main__':
+    print('Item 1')
+    item_one = ItemToPurchase()
+    item_one.item_name = input('Enter the item name:\n')
+    item_one.item_price = int(input('Enter the item price:\n'))
+    item_one.item_quantity = int(input('Enter the item quantity:\n'))
+
+    print('\nItem 2')
+    item_two = ItemToPurchase()
+    item_two.item_name = input('Enter the item name:\n')
+    item_two.item_price = int(input('Enter the item price:\n'))
+    item_two.item_quantity = int(input('Enter the item quantity:\n'))
+
+# This is the equation for the total cost as well as individual costs
+    total_cost = item_one.item_price * item_one.item_quantity + item_two.item_price * item_two.item_quantity
+    total_cost1 = item_one.item_price * item_one.item_quantity
+    total_cost2 = item_two.item_price * item_two.item_quantity
+
+# formatting for the display of information
+    print('\nTOTAL COST')
+    print('{} {} @ ${} = ${}'.format(item_one.item_name, item_one.item_quantity, item_one.item_price, total_cost1))
+    print('{} {} @ ${} = ${}'.format(item_two.item_name, item_two.item_quantity, item_two.item_price, total_cost2))
+
+    print('\nTotal: $' + str(total_cost))
