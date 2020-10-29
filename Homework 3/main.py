@@ -15,4 +15,7 @@ class ItemToPurchase:
         print(self.item_name + '' + str(self.item_quantity) + '@ $' + str(self.item_price) + '= $' +
               str(self.item_quantity * self.item_price))
 
-
+# defining item description
+# will print out in the order of item name and then description
+    def print_item_description(self):
+        print(self.item_name + ':' + self.item_description)
