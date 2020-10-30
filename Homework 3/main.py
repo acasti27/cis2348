@@ -50,12 +50,12 @@ class ShoppingCart:
         for item in self.cart_items:
             if item.item_name == remove_item:
                 del self.cart_items[i]
-                flag = True
+                re_item = True
                 break
             else:
-                flag = True
+                re_item = True
                 i += 1
-        if flag == False:
+        if not re_item:
             print('Item not found in cart. Nothing removed.')
 
     # defining item modification
@@ -65,9 +65,13 @@ class ShoppingCart:
         for item in item.cart_items:
             if item.item_name == name:
                 quantity = input('Enter the new quantity:\n')
+                item.item_quantity = quantity
+                mod_name = True
                 break
             else:
-                print('Item not found in cart. Nothing modified.\n')
+                mod_name = False
+        if mod_name is False:
+            print('Item not found in cart. Nothing modified.\n')
 
     # for returning item quantity
     def get_num_items_in_cart(self):
