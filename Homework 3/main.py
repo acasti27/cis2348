@@ -110,6 +110,7 @@ def print_menu(obj):
     option = ''
     while option != 'q':
         print(menu)
+        option = input('Choose an option:\n')
         while (option != 'a' and option != 'o' and option != 'i' and option != 'r'
                 and option != 'c' and option != 'q'):
             option = input('Choose an option:\n')
