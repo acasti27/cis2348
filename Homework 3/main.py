@@ -114,16 +114,16 @@ def print_menu(obj):
         while (option != 'a' and option != 'o' and option != 'i' and option != 'r'
                 and option != 'c' and option != 'q'):
             option = input('Choose an option:\n')
-            if option == 'a':
-                obj.add_item()
-            elif option == 'o':
-                obj.output_cart()
-            elif option == 'i':
-                obj.print_descriptions()
-            elif option == 'r':
-                obj.remove_item()
-            elif option == 'c':
-                obj.modify_items()
+        if option == 'a':
+            obj.add_item()
+        elif option == 'o':
+            obj.output_cart()
+        elif option == 'i':
+            obj.print_descriptions()
+        elif option == 'r':
+            obj.remove_item()
+        if option == 'c':
+            obj.modify_items()
 
 
 # redefining the main code
