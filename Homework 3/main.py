@@ -65,7 +65,6 @@ class ShoppingCart:
         for item in item.cart_items:
             if item.item_name == name:
                 quantity = input('Enter the new quantity:\n')
-                flag = True
                 break
             else:
                 print('Item not found in cart. Nothing modified.\n')
@@ -124,19 +123,14 @@ def print_menu(obj):
                 obj.remove_item()
             elif option == 'c':
                 obj.modify_items()
-            break
 
 
 # redefining the main code
 # adding in printing format
-def main():
+if __name__ == '__main__':
     customer_name = input("Enter customer's name:\n")
     current_date = input("Enter today's date:\n")
     print('\nCustomer name:', customer_name, end='\n')
     print("Today's date:", current_date, end='\n')
     new_cart = ShoppingCart(customer_name, current_date)
     print_menu(new_cart)
-
-
-if __name__ == '__main__':
-    main()
