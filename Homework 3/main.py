@@ -50,6 +50,13 @@ while True:
         rating = int(input('Enter a rating:\n'))
         keys = list(players.keys())
         keys.sort()
-        print('\n ABOVE %d' % rating)
+        print('\nABOVE %d' % rating)
+        count = 0
+        for key in keys:
+            if players[key] > rating:
+                print("Jersey number: %d, Rating: %d" % (key, players[key]))
+                count += 1
+        if count == 0:
+            print('No players found above %d rating' % rating)
     if option == 'q':
         break
