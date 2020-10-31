@@ -45,24 +45,24 @@ class ShoppingCart:
     # defining item removal
     def remove_item(self):
         print('REMOVE ITEM FROM CART')
-        remove_item = input('Enter name of item to remove:\n')
+        remove = str(input('Enter name of item to remove:\n'))
         i = 0
         for item in self.cart_items:
-            if item.item_name == remove_item:
+            if item.item_name == remove:
                 del self.cart_items[i]
-                re_item = True
+                flag = True
                 break
             else:
-                re_item = True
-                i += 1
-        if not re_item:
+                flag = False
+            i += 1
+        if flag == False:
             print('Item not found in cart. Nothing removed.')
 
     # defining item modification
-    def modify_item(self, item):
+    def modify_item(self):
         print('CHANGE ITEM QUANTITY')
         name = input('Enter the item name:\n')
-        for item in item.cart_items:
+        for item in self.cart_items:
             if item.item_name == name:
                 quantity = input('Enter the new quantity:\n')
                 item.item_quantity = quantity
@@ -70,8 +70,8 @@ class ShoppingCart:
                 break
             else:
                 mod_name = False
-        if mod_name is False:
-            print('Item not found in cart. Nothing modified.\n')
+            if mod_name is False:
+                print('Item not found in cart. Nothing modified.\n')
 
     # for returning item quantity
     def get_num_items_in_cart(self):
@@ -91,16 +91,22 @@ class ShoppingCart:
 
     # for printing the total cost of the cart
     def print_total(self):
-        total_cost = self.get_cost_of_cart()
-        if total_cost == 0:
-            print('SHOPPING CART IS EMPTY')
+        print('OUTPUT SHOPPING CART')
+        if len(self.cart_items) != 0:
+            print(self.customer_name + "'s Shopping Cart - " + self.current_date)
+            print('Number of Items: {}'.format(self.get_num_items_in_cart()))
+            print()
+            print('\nTotal: ${}')
         else:
-            self.output_cart()
+            print(self.customer_name + "'s Shopping Cart - " + self.current_date)
+            print('Number of Items: 0')
+            print('\nSHOPPING CART IS EMPTY')
+            print('\nTotal: $0')
 
     # printing out item descriptions
     def print_descriptions(self):
         print("OUTPUT ITEMS' DESCRIPTIONS")
-        print("{}'s Shopping Cart - {}".format(self.customer_name, self.customer_name))
+        print("{}'s Shopping Cart - {}".format(self.customer_name, self.current_date))
         print('\nItem Descriptions')
         for item in self.cart_items:
             print('{}: {}'.format(item.item_name, item.item_description))
@@ -121,13 +127,13 @@ def print_menu(obj):
         if option == 'a':
             obj.add_item()
         elif option == 'o':
-            obj.output_cart()
+            obj.print_total()
         elif option == 'i':
             obj.print_descriptions()
         elif option == 'r':
             obj.remove_item()
         if option == 'c':
-            obj.modify_items()
+            obj.modify_item()
 
 
 # redefining the main code
