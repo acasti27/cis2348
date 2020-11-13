@@ -6,3 +6,8 @@
 #
 # Referencing Zylab - this will initiate the use of csv readers
 import csv
+# var name for general input file
+input_file = input()
+# this will read any input file
+with open(input_file, 'File') as csvfile:
+    csv_reader = csv.reader(csvfile)
