@@ -17,3 +17,5 @@ with open(input_file, 'r') as csvfile:
     for row in csv_reader:
         if row == '':
             print('')
+        if row == '':
+            print('')
