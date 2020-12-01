@@ -15,4 +15,5 @@ with open(input_file, 'r') as csvfile:
     # specifically, this will be reading each row at a time and then reading each value or column
     # First I'm checking to make sure that the file can be read
     for row in csv_reader:
-        print(row)
+        if row == '':
+            print('')
