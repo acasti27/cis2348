@@ -11,13 +11,14 @@ def selection_sort_descend_trace(numbers):
                 ind = b
         numbers[a], numbers[ind] = numbers[ind], numbers[a]
         for x in numbers:
-            print(x, end='')
-            print()
+            print(x, '', end='')
+        print()
+    return numbers
 
 
 if __name__ == "__main__":
     # TODO: Read in a list of integers into numbers, then call
     #       selection_sort_descend_trace() to sort the numbers
     # number splitting
-    numbers = [int(x) for x in input().split()]
+    numbers = [int(x) for x in input('').split()]
     selection_sort_descend_trace(numbers)
