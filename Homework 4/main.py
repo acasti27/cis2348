@@ -6,7 +6,7 @@ def selection_sort_descend_trace(numbers):
     # defined the sorting
     for a in range(len(numbers) - 1):
         ind = a
-        for b in range(a +1, len(numbers)):
+        for b in range(a + 1, len(numbers)):
             if numbers[b] > numbers[ind]:
                 ind = b
         numbers[a], numbers[ind] = numbers[ind], numbers[a]
