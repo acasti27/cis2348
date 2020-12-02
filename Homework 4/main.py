@@ -18,5 +18,6 @@ def selection_sort_descend_trace(numbers):
 if __name__ == "__main__":
     # TODO: Read in a list of integers into numbers, then call
     #       selection_sort_descend_trace() to sort the numbers
+    # number splitting
     numbers = [int(x) for x in input().split()]
     selection_sort_descend_trace(numbers)
