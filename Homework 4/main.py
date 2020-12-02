@@ -6,7 +6,11 @@ name = parts[0]
 while name != '-1':
     # FIXME: The following line will throw ValueError exception.
     #        Insert try/except blocks to catch the exception.
-    age = int(parts[1]) + 1
+    # added try and exception
+    try:
+        age = int(parts[1]) + 1
+    except Exception as exe:
+        age = 0
     print('{} {}'.format(name, age))
 
     # Get next line
