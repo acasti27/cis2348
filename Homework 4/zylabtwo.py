@@ -9,6 +9,7 @@ while name != '-1':
     # added try and exception
     try:
         age = int(parts[1]) + 1
+
     except Exception as exe:
         age = 0
     print('{} {}'.format(name, age))
