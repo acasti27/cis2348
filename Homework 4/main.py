@@ -9,10 +9,20 @@ num_calls = 0
 #       initialized to the left and right sides of the current elements being sorted,
 #       and determine if a swap is necessary
 def partition(user_ids, i, k):
+    a = (i - 1)
+    # storing element
+    pivot = user_ids[k]
+    for b in range (i, k):
+        if user_ids[b] <= pivot:
+            a = a + 1
+            user_ids[a], user_ids[b] = user_ids[b], user_ids[a]
+    user_ids[a + 1], user_ids[k] = user_ids[k], usr_ids[a + 1]
+
+
+
+
 # TODO: Write the quicksort algorithm that recursively sorts the low and
 #       high partitions. Add 1 to num_calls each time quisksort() is called
-
-
 def quicksort(user_ids, i, k):
 
 
