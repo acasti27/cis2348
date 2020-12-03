@@ -7,7 +7,7 @@
 # Referencing Zylab Ch.9 - this will initiate the use of csv readers
 import csv
 # var name for general input file
-input_file = input()
+input_file = input('Please enter a file name:')
 # this will read any input file
 with open(input_file, 'r') as csvfile:
     csv_reader = csv.reader(csvfile)
@@ -15,7 +15,4 @@ with open(input_file, 'r') as csvfile:
     # specifically, this will be reading each row at a time and then reading each value or column
     # First I'm checking to make sure that the file can be read
     for row in csv_reader:
-        if row == '':
-            print('')
-        if row == '':
-            print('')
+        print(row)
