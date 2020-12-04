@@ -3,7 +3,7 @@
 # In theory, this should be able to read any csv file and output either an
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
-#
+
 # Referencing Zylab Ch.9 - this will initiate the use of csv readers
 import csv
 # var name for general input file
@@ -11,6 +11,7 @@ import csv
 input_file = input('Please enter a file name:')
 # Will move around later, but I wanted to include a list of choices to give myself a better idea on how to go about the
 # rest of this part
+sort = {}
 
 # this will read any input file
 with open(input_file, 'r') as csvfile:
@@ -22,7 +23,3 @@ with open(input_file, 'r') as csvfile:
         print(row)
 # letting the file print out for now
 
-# printing out the menu
-while True:
-    print('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - '
-          'Sort by most expensive to least\nq = Quit')
