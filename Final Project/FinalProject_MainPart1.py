@@ -22,10 +22,8 @@ with open(input_file, 'r') as csvfile:
         print(row)
 # letting the file print out for now
 
-
+# defining a class to create a menu
 def print_menu(obj):
     menu = ('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - Sort by most expensive'
       'to least\nq = Quit')
-# moving my menu down for now while I work things out
-print('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - Sort by most expensive'
-      'to least\nq = Quit')
+
