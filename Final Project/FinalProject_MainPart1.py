@@ -11,8 +11,6 @@ import csv
 input_file = input('Please enter a file name:')
 # Will move around later, but I wanted to include a list of choices to give myself a better idea on how to go about the
 # rest of this part
-print('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - Sort by most expensive'
-      'to least\nq = Quit')
 
 # this will read any input file
 with open(input_file, 'r') as csvfile:
@@ -20,5 +18,14 @@ with open(input_file, 'r') as csvfile:
 # now to set some conditions for which the file should be read and outputted
     # specifically, this will be reading each row at a time and then reading each value or column
     # First I'm checking to make sure that the file can be read
-#    for row in csv_reader:
-#        print(row)
+    for row in csv_reader:
+        print(row)
+# letting the file print out for now
+
+
+def print_menu(obj):
+    menu = ('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - Sort by most expensive'
+      'to least\nq = Quit')
+# moving my menu down for now while I work things out
+print('\nMenu\na - Sort alphabetically\ns - Sort by item id\no - Sort by oldest to newest\ne - Sort by most expensive'
+      'to least\nq = Quit')
