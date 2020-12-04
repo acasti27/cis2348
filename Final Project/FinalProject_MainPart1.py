@@ -3,6 +3,10 @@
 # In theory, this should be able to read any csv file and output either an
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
+nrow = int(input())
+nrow = 0
+
+
 # defining a class solely for reading the file
 class CsvReading:
     import csv
@@ -12,7 +16,7 @@ class CsvReading:
     input_file = input('Please enter a file name:')
 # Will move around later, but I wanted to include a list of choices to give myself a better idea on how to go about the
 # rest of this part
-    sort = {}
+    csv_content = []
 # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -21,9 +25,21 @@ class CsvReading:
         # First I'm checking to make sure that the file can be read
         for row in csv_reader:
             print(row)
+            # storing the row into the list I've made
+            csv_content.append(row)
+
+
 # letting the file print out for now
+
 
 # defining a class for sorting the file alphabetically
 class AlphabetSort:
-    def __init__(self, item_id, manufacturer, item_type, price, manu_date, condition):
-
+    def columns(item_id, manufacturer, item_type, price, manu_date, condition):
+        i = 0
+        while i < nrow:
+            i.item_id = item_id
+            i.manufacturer = manufacturer
+            i.item_type = item_type
+            i.price = price
+            i.manu_date = manu_date
+            i.condition = condition
