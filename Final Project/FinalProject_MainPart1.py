@@ -29,17 +29,18 @@ class CsvReading:
             csv_content.append(row)
 
 
-# letting the file print out for now
-
-
 # defining a class for sorting the file alphabetically
 class AlphabetSort:
-    def columns(item_id, manufacturer, item_type, price, manu_date, condition):
-        i = 0
-        while i < nrow:
-            i.item_id = item_id
-            i.manufacturer = manufacturer
-            i.item_type = item_type
-            i.price = price
-            i.manu_date = manu_date
-            i.condition = condition
+    # defining my column names
+    def columns(self, item_id, manufacturer, item_type, price, manu_date, condition='none'):
+        self.item_id = item_id
+        self.manufacterer = manufacturer
+        self.item_type = item_type
+        self.price = price
+        self.manu_date = manu_date
+        self.condition = condition
+    # defining a sorting format
+    def column_sort(self):
+        return '({}, {}, {}, ${}, {}, {}'.format(self.item_id, self.manufacterer, self.item_type,
+                                                 self.price, self.manu_date, self.condition)
+
