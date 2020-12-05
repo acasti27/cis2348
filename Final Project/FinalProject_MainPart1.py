@@ -39,8 +39,16 @@ class AlphabetSort:
         self.price = price
         self.manu_date = manu_date
         self.condition = condition
+
     # defining a sorting format
     def column_sort(self):
         return '({}, {}, {}, ${}, {}, {}'.format(self.item_id, self.manufacterer, self.item_type,
                                                  self.price, self.manu_date, self.condition)
 
+    # hoping that this will print out everything alphabetically
+    def manufacturer_sort(manu):
+        return manu.manufacturer
+    # since sorted can give me an output which is pretty much alphabetical, I decided to go with that approach
+    alpha_manu = sorted(csv_content, key=manufacturer_sort())
+
+    print(alpha_manu)
