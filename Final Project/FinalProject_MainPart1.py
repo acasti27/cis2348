@@ -3,7 +3,6 @@
 # In theory, this should be able to read any csv file and output either an
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
-nrow = int(input())
 nrow = 0
 
 
