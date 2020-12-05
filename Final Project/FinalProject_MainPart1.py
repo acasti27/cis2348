@@ -51,3 +51,24 @@ class AlphabetSort:
     alpha_manu = sorted(csv_content, key=manufacturer_sort())
 
     print(alpha_manu)
+
+# this class will be for sorting csv files by item id and outputting a file
+class id_sort:
+    # defining a class for now,name will be figured out later
+    def id_columns(self, item_id):
+        self.item_id = item_id
+
+# this class will be for sorting items from old to new, so descending order
+# note to self: this is also in descending order
+class old_to_new:
+    # defining something for now just to fill this class
+    def service_date_order(self, service_date = 'December 12, 2020'):
+        self.service_date = service_date
+
+
+# this class will be for sorting damaged items from most expensive to least
+# descending order?
+class damaged_expenses:
+    # defining something for now just to fill in the class
+    def item_condition(self, item_cond = ''):
+        self.item_condition
