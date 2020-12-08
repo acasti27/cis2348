@@ -21,9 +21,15 @@ class CsvReading:
         # specifically, this will be reading each row at a time and then reading each value or column
         # First I'm checking to make sure that the file can be read
         for row in csv_reader:
-            print(row)
             # storing the row into the list I've made
             csv_content.append(row)
+        # for my understanding of this concept, this essentially takes each value and keeps flipping them until in
+        # placed into the right order
+        for i in range(len(csv_content)):
+            for j in range(i+1, len(csv_content)):
+                if csv_content[i][1] > csv_content[j][1]:
+                    csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
+                print(csv_content)
 
 
 # defining a class for sorting the file alphabetically
