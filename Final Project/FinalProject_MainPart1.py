@@ -3,19 +3,17 @@
 # In theory, this should be able to read any csv file and output either an
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
+import csv
 nrow = 0
-
-
+csv_content = []
 # defining a class solely for reading the file
 class CsvReading:
-    import csv
 # Referencing Zylab Ch.9 - this will initiate the use of csv reader
 # var name for general input file
 # decided to ask for the user to enter a file name
     input_file = input('Please enter a file name:')
 # Will move around later, but I wanted to include a list of choices to give myself a better idea on how to go about the
 # rest of this part
-    csv_content = []
 # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -58,17 +56,22 @@ class id_sort:
     def id_columns(self, item_id):
         self.item_id = item_id
 
+    id_sorted = sorted(csv_content, key=id_sort())
+    print(id_sorted)
+
 # this class will be for sorting items from old to new, so descending order
 # note to self: this is also in descending order
 class old_to_new:
     # defining something for now just to fill this class
-    def service_date_order(self, service_date = 'December 12, 2020'):
+    def service_date_order(self, service_date='December 12, 2020'):
         self.service_date = service_date
+
+
 
 
 # this class will be for sorting damaged items from most expensive to least
 # descending order?
 class damaged_expenses:
     # defining something for now just to fill in the class
-    def item_condition(self, item_cond = ''):
+    def item_condition(self, item_cond=''):
         self.item_condition
