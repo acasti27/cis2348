@@ -66,6 +66,25 @@ print(content_two)
 
 # this for part c, I will be defining a class that will sort the dates from oldest to newest
 class OldNew:
-    input_file_three = input('Please enter a file name to sort from oldest to newest')
+    # asking for a third input
+    input_file_three = input('Please enter a file name to sort from oldest to newest:')
+    # using the csv reader to open the input file
+    with open(input_file_three, 'r') as cfile:
+        the_reader = csv.reader(cfile, delimiter=',')
+        # appending this elsewhere so it continues to read each file listed differently
+        for row in the_reader:
+            content_three.append(row)
+        for i in range(len(content_three)):
+            for j in range(i+1, len(content_three)):
+                if content_three[i][4] < content_three[j][4]:
+                    content_three[i], content_three[j] = content_three[j], content_three[i]
 
+
+print(content_three)
+
+
+# this is for part d, I will be defining a class that will sort the prices for most expensive to least expensive
+class Price:
+    # asking for a fourth input
+    input_four = input('Please enter a file name to sort from most expensive to least expensive:')
 
