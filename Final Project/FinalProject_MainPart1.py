@@ -38,7 +38,7 @@ print(csv_content)
 
 # defining a class for sorting the file alphabetically
 class AlphabetSort:
-
+    # copied what I had before and pasted it into a text file named alpha_sort for ref
 
 # this class will be for sorting csv files by item id and outputting a file
 class id_sort:
