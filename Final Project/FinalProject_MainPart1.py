@@ -7,15 +7,19 @@ import csv
 
 nrow = 0
 
+# these are where the lists will append to
 csv_content = []
+content_two = []
 
+
+# this class sorts the files alphabetically
 class CsvReading:
 
-# Referencing Zylab Ch.9 - this will initiate the use of csv reader
-# var name for general input file
-# decided to ask for the user to enter a file name
+    # Referencing Zylab Ch.9 - this will initiate the use of csv reader
+    # var name for general input file
+    # decided to ask for the user to enter a file name
     input_file = input('Please enter a file name to sort alphabetically:')
-# this will read any input file
+    # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         # now to set some conditions for which the file should be read and outputted
@@ -29,9 +33,10 @@ class CsvReading:
         # placed into the right order
 
         for i in range(len(csv_content)):
-            for j in range(i+1 , len(csv_content)):
+            for j in range(i+1, len(csv_content)):
                 if csv_content[i][1] > csv_content[j][1]:
                     csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
+
 
 print(csv_content)
 
@@ -39,38 +44,19 @@ print(csv_content)
 # copied what I had before and pasted it into a text file named alpha_sort for ref in case I change my mind
 #
 # defining a class for sorting the file by damage and id
-class Damage_ID:
+class IdSort:
     # asking for a second input so it can be sorted
     input_file_two = input('Please enter a file name to sort by item id:')
     # recreating what I need to open the selected file in order to work with it
     with open(input_file_two, 'r') as csfile:
         file_reader = csv.reader(csfile, delimiter=',')
         for row in file_reader:
-            print(row)
+            csv_content.append(row)
+
+        for i in range(len(csv_content)):
+            for j in range(i+1, len(csv_content)):
+                if csv_content[i][0] > csv_content[j][0]:
+                    csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
 
 
-# this class will be for sorting csv files by item id and outputting a file
-class id_sort:
-    # defining a class for now,name will be figured out later
-    def id_columns(self, item_id):
-        self.item_id = item_id
-
-    id_sorted = sorted(csv_content, key=id_sort())
-    print(id_sorted)
-
-# this class will be for sorting items from old to new, so descending order
-# note to self: this is also in descending order
-class old_to_new:
-    # defining something for now just to fill this class
-    def service_date_order(self, service_date='December 12, 2020'):
-        self.service_date = service_date
-
-
-
-
-# this class will be for sorting damaged items from most expensive to least
-# descending order?
-class damaged_expenses:
-    # defining something for now just to fill in the class
-    def item_condition(self, item_cond=''):
-        self.item_condition
+print(csv_content)
