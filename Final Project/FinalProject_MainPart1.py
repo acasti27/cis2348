@@ -14,7 +14,7 @@ class CsvReading:
 # Referencing Zylab Ch.9 - this will initiate the use of csv reader
 # var name for general input file
 # decided to ask for the user to enter a file name
-    input_file = input('Please enter a file name:')
+    input_file = input('Please enter a file name to sort alphabetically:')
 # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -36,9 +36,18 @@ class CsvReading:
 print(csv_content)
 
 
-# defining a class for sorting the file alphabetically
-class AlphabetSort:
-    # copied what I had before and pasted it into a text file named alpha_sort for ref
+# copied what I had before and pasted it into a text file named alpha_sort for ref in case I change my mind
+#
+# defining a class for sorting the file by damage and id
+class Damage_ID:
+    # asking for a second input so it can be sorted
+    input_file_two = input('Please enter a file name to sort by item id:')
+    # recreating what I need to open the selected file in order to work with it
+    with open(input_file_two, 'r') as csfile:
+        file_reader = csv.reader(csfile, delimiter=',')
+        for row in file_reader:
+            print(row)
+
 
 # this class will be for sorting csv files by item id and outputting a file
 class id_sort:
