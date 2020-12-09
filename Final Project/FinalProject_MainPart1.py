@@ -11,6 +11,7 @@ nrow = 0
 csv_content = []
 content_two = []
 content_three = []
+content_four = []
 
 
 # this class sorts the files alphabetically
@@ -19,7 +20,7 @@ class CsvReading:
     # Referencing Zylab Ch.9 - this will initiate the use of csv reader
     # var name for general input file
     # decided to ask for the user to enter a file name
-    input_file = input('Please enter a file name to sort alphabetically:')
+    input_file = input('Please enter a file name to sort alphabetically:\n')
     # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -47,7 +48,7 @@ print(csv_content)
 # defining a class for sorting the file by damage and id
 class IdSort:
     # asking for a second input so it can be sorted
-    input_file_two = input('Please enter a file name to sort by item id:')
+    input_file_two = input('\nPlease enter a file name to sort by item id:\n')
     # recreating what I need to open the selected file in order to work with it
     with open(input_file_two, 'r') as csfile:
         file_reader = csv.reader(csfile, delimiter=',')
@@ -67,7 +68,7 @@ print(content_two)
 # this for part c, I will be defining a class that will sort the dates from oldest to newest
 class OldNew:
     # asking for a third input
-    input_file_three = input('Please enter a file name to sort from oldest to newest:')
+    input_file_three = input('\nPlease enter a file name to sort from oldest to newest:\n')
     # using the csv reader to open the input file
     with open(input_file_three, 'r') as cfile:
         the_reader = csv.reader(cfile, delimiter=',')
@@ -86,5 +87,17 @@ print(content_three)
 # this is for part d, I will be defining a class that will sort the prices for most expensive to least expensive
 class Price:
     # asking for a fourth input
-    input_four = input('Please enter a file name to sort from most expensive to least expensive:')
+    input_four = input('\nPlease enter a file name to sort from most expensive to least expensive:\n')
+    # using the csv reader to open the file
+    with open(input_four, 'r') as file:
+        read = csv.reader(file, delimiter=',')
+        # appending elsewhere so it doesn't read with the other files
+        for row in read:
+            content_four.append(row)
+        for i in range(len(content_four)):
+            for j in range(len(content_four)):
+                if content_four[i][3] < content_four[j][3]:
+                    content_four[i], content_four[j] = content_four[j], content_four[i]
 
+
+print(content_four)
