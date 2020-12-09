@@ -43,8 +43,6 @@ class CsvReading:
 print(csv_content)
 
 
-# copied what I had before and pasted it into a text file named alpha_sort for ref in case I change my mind
-#
 # defining a class for sorting the file by damage and id
 class IdSort:
     # asking for a second input so it can be sorted
@@ -75,6 +73,7 @@ class OldNew:
         # appending this elsewhere so it continues to read each file listed differently
         for row in the_reader:
             content_three.append(row)
+
         for i in range(len(content_three)):
             for j in range(i+1, len(content_three)):
                 # trying a different approach to get it to read dates from oldest to newest
@@ -85,7 +84,7 @@ class OldNew:
                 m1 = int(m1)
                 y1 = int(y1)
                 b1 = date(y1, m1, d1)
-                m2, d2, y2 = [x for x in content_three[i][4].split('/')]
+                m2, d2, y2 = [x for x in content_three[j][4].split('/')]
                 d2 = int(d2)
                 m2 = int(m2)
                 y2 = int(y2)
