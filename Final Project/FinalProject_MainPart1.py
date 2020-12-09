@@ -50,13 +50,14 @@ class IdSort:
     # recreating what I need to open the selected file in order to work with it
     with open(input_file_two, 'r') as csfile:
         file_reader = csv.reader(csfile, delimiter=',')
+        # these will append to another list
         for row in file_reader:
-            csv_content.append(row)
+            content_two.append(row)
+        # this time I'm taking the first value which is 0 to put the item id's in order
+        for i in range(len(content_two)):
+            for j in range(i+1, len(content_two)):
+                if content_two[i][0] > content_two[j][0]:
+                    content_two[i], content_two[j] = content_two[j], content_two[i]
 
-        for i in range(len(csv_content)):
-            for j in range(i+1, len(csv_content)):
-                if csv_content[i][0] > csv_content[j][0]:
-                    csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
 
-
-print(csv_content)
+print(content_two)
