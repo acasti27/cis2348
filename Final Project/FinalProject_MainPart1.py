@@ -4,16 +4,17 @@
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
 import csv
+
 nrow = 0
+
 csv_content = []
-# defining a class solely for reading the file
+
 class CsvReading:
+
 # Referencing Zylab Ch.9 - this will initiate the use of csv reader
 # var name for general input file
 # decided to ask for the user to enter a file name
     input_file = input('Please enter a file name:')
-# Will move around later, but I wanted to include a list of choices to give myself a better idea on how to go about the
-# rest of this part
 # this will read any input file
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -21,40 +22,23 @@ class CsvReading:
         # specifically, this will be reading each row at a time and then reading each value or column
         # First I'm checking to make sure that the file can be read
         for row in csv_reader:
+
             # storing the row into the list I've made
             csv_content.append(row)
         # for my understanding of this concept, this essentially takes each value and keeps flipping them until in
         # placed into the right order
+
         for i in range(len(csv_content)):
-            for j in range(i+1, len(csv_content)):
+            for j in range(i+1 , len(csv_content)):
                 if csv_content[i][1] > csv_content[j][1]:
                     csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
-                print(csv_content)
+
+print(csv_content)
 
 
 # defining a class for sorting the file alphabetically
 class AlphabetSort:
-    # defining my column names
-    def columns(self, item_id, manufacturer, item_type, price, manu_date, condition='none'):
-        self.item_id = item_id
-        self.manufacterer = manufacturer
-        self.item_type = item_type
-        self.price = price
-        self.manu_date = manu_date
-        self.condition = condition
 
-    # defining a sorting format
-    def column_sort(self):
-        return '({}, {}, {}, ${}, {}, {}'.format(self.item_id, self.manufacterer, self.item_type,
-                                                 self.price, self.manu_date, self.condition)
-
-    # hoping that this will print out everything alphabetically
-    def manufacturer_sort(manu):
-        return manu.manufacturer
-    # since sorted can give me an output which is pretty much alphabetical, I decided to go with that approach
-    alpha_manu = sorted(csv_content, key=manufacturer_sort())
-
-    print(alpha_manu)
 
 # this class will be for sorting csv files by item id and outputting a file
 class id_sort:
