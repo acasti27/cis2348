@@ -4,7 +4,7 @@
 # alphabetically sorted, by item id, old to recent, or most expensive to least
 # expensive list
 import csv
-
+from datetime import *
 nrow = 0
 
 # these are where the lists will append to
@@ -77,8 +77,24 @@ class OldNew:
             content_three.append(row)
         for i in range(len(content_three)):
             for j in range(i+1, len(content_three)):
-                if content_three[i][4] < content_three[j][4]:
-                    content_three[i], content_three[j] = content_three[j], content_three[i]
+                # trying a different approach to get it to read dates from oldest to newest
+                # ideally these will be looking at each date and not only taking the year into account, but the
+                # date as a whole so that it can sort it better
+                m1, d1, y1 = [x for x in content_three[i][4].split('/')]
+                d1 = int(d1)
+                m1 = int(m1)
+                y1 = int(y1)
+                b1 = date(y1, m1, d1)
+                m2, d2, y2 = [x for x in content_three[i][4].split('/')]
+                d2 = int(d2)
+                m2 = int(m2)
+                y2 = int(y2)
+                b2 = date(y2, m2, d2)
+                if b1 > b2:
+                    csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
+                    print('Switch made.')
+                else:
+                    continue
 
 
 print(content_three)
