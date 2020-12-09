@@ -91,7 +91,7 @@ class OldNew:
                 y2 = int(y2)
                 b2 = date(y2, m2, d2)
                 if b1 > b2:
-                    csv_content[i], csv_content[j] = csv_content[j], csv_content[i]
+                    content_three[i], content_three[j] = content_three[j], content_three[i]
                     print('Switch made.')
                 else:
                     continue
