@@ -111,7 +111,7 @@ class Price:
             content_four.append(row)
         for i in range(len(content_four)):
             for j in range(len(content_four)):
-                if content_four[i][3] < content_four[j][3]:
+                if content_four[i][3] > content_four[j][3]:
                     content_four[i], content_four[j] = content_four[j], content_four[i]
 
 
