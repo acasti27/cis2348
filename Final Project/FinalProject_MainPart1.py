@@ -10,6 +10,7 @@ nrow = 0
 # these are where the lists will append to
 csv_content = []
 content_two = []
+content_three = []
 
 
 # this class sorts the files alphabetically
@@ -61,3 +62,10 @@ class IdSort:
 
 
 print(content_two)
+
+
+# this for part c, I will be defining a class that will sort the dates from oldest to newest
+class OldNew:
+    input_file_three = input('Please enter a file name to sort from oldest to newest')
+
+
