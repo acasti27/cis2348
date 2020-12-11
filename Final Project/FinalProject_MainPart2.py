@@ -12,28 +12,32 @@ service_dates = []
 
 # this class will be for reading the files
 class CSVReader:
-    # importing csv to read the file
-    # prompting the user to input a file name
-    print('When entering group of files, please enter in the following order: '
-          'Manufacturer, Service Date, Price List')
+    # prompting the user to input a file name in an order
+    print('When entering a group of files to work with, please enter in the following order:\n '
+          'Manufacturer, Price List, and Service Date List using the following format:\n'
+          ' "file_name.csv"')
+    # prompting user to input three file names
     input_file = input('Please enter a file name:\n')
     file_two = input('Please enter a second file name:\n')
     file_three = input('Please enter a third file name:\n')
-    # letting the file print out for now
+    # opening each input and making sure that they append into separate places
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            print(row)
-            print()
+            manufacturer.append(row)
 
     with open(file_two, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            print(row)
-            print()
+            prices.append(row)
 
     with open(file_three, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            print(row)
-            print()
+            service_dates.append(row)
+
+
+# printing out each appended list to make sure it's all printing
+print(manufacturer)
+print(prices)
+print(service_dates)
