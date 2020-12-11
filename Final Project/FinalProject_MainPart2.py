@@ -50,5 +50,9 @@ while True:
     # this will ask the user to search again or quit
     print('\nWould you like to search for something else?\ny - yes\nq - quit')
     option = input('Please select an option:\n')
+    # this will prompt the user to search for something else again
+    if option == 'y':
+        print(CSVReader)
+    # this will quit the program
     if option == 'q':
         break
