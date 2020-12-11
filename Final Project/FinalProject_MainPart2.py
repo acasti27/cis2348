@@ -25,19 +25,30 @@ class CSVReader:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
             manufacturer.append(row)
+            csv_files.append(row)
 
     with open(file_two, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
             prices.append(row)
+            csv_files.append(row)
 
     with open(file_three, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
             service_dates.append(row)
+            csv_files.append(row)
 
 
 # printing out each appended list to make sure it's all printing
 print(manufacturer)
 print(prices)
 print(service_dates)
+
+
+while True:
+    # this will ask the user to search again or quit
+    print('\nWould you like to search for something else?\ny - yes\nq - quit')
+    option = input('Please select an option:\n')
+    if option == 'q':
+        break
