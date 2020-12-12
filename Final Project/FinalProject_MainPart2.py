@@ -4,6 +4,7 @@
 # this will read all the csv files
 import csv
 # this is for the group of files to append to
+# somehoe make into a dictionary?
 csv_files = []
 manufacturer = []
 prices = []
@@ -44,6 +45,12 @@ class CSVReader:
 print(manufacturer)
 print(prices)
 print(service_dates)
+
+
+def askuser():
+    # this will be asking the user to enter a manufacturer and an item type and taking them as inputs
+    manufacturer_input = input('Please enter a manufacturer:\n')
+    item_input = input('Please enter an item type:\n ')
 
 
 while True:
