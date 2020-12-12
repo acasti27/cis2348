@@ -4,8 +4,8 @@
 # this will read all the csv files
 import csv
 # this is for the group of files to append to
-# somehoe make into a dictionary?
-csv_files = []
+# creating this dictionary to see if I can put the lists inside of it
+csv_files = {'manufacturer': [], 'prices': [], 'service_dates': []}
 manufacturer = []
 prices = []
 service_dates = []
@@ -25,32 +25,30 @@ class CSVReader:
     with open(input_file, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            manufacturer.append(row)
-            csv_files.append(row)
+            csv_files['manufacturer'].append(row)
 
     with open(file_two, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            prices.append(row)
-            csv_files.append(row)
+            csv_files['prices'].append(row)
 
     with open(file_three, 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
-            service_dates.append(row)
-            csv_files.append(row)
+            csv_files['service_dates'].append(row)
 
 
 # printing out each appended list to make sure it's all printing
-print(manufacturer)
-print(prices)
-print(service_dates)
+print(csv_files)
+# this is to print the item type and manufacter that the user searched for including id, name, type and
+# price
+# print('Your item is: ID - {} Manufacturer - {} Item Type - {} Price - {} ').format(self.item_type,
+# self.item_manufacturer)
 
-
-def askuser():
-    # this will be asking the user to enter a manufacturer and an item type and taking them as inputs
-    manufacturer_input = input('Please enter a manufacturer:\n')
-    item_input = input('Please enter an item type:\n ')
+# def askuser():
+# this will be asking the user to enter a manufacturer and an item type and taking them as inputs
+# manufacturer_input = input('Please enter a manufacturer:\n')
+# item_input = input('Please enter an item type:\n ')
 
 
 while True:
