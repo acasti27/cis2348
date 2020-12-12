@@ -4,11 +4,8 @@
 # this will read all the csv files
 import csv
 # this is for the group of files to append to
-# creating this dictionary to see if I can put the lists inside of it
+# this dictionary has each list inside of it
 csv_files = {'manufacturer': [], 'prices': [], 'service_dates': []}
-manufacturer = []
-prices = []
-service_dates = []
 
 
 # this class will be for reading the files
@@ -38,17 +35,20 @@ class CSVReader:
             csv_files['service_dates'].append(row)
 
 
-# printing out each appended list to make sure it's all printing
+# this prints out the dictionary
 print(csv_files)
-# this is to print the item type and manufacter that the user searched for including id, name, type and
-# price
-# print('Your item is: ID - {} Manufacturer - {} Item Type - {} Price - {} ').format(self.item_type,
-# self.item_manufacturer)
 
-# def askuser():
-# this will be asking the user to enter a manufacturer and an item type and taking them as inputs
-# manufacturer_input = input('Please enter a manufacturer:\n')
-# item_input = input('Please enter an item type:\n ')
+# prompting the user to enter a manufacturer name and item type
+user_input = input('Please enter manufacturer and item type:\n')
+# this will spilit that input into to separate variables
+user_input = user_input.split()
+print(user_input)
+# taking those two and searching for them within the manufacturer list in the dictionary
+for i in range(len(user_input)):
+    if 'manufacturer'[i][1] in user_input and 'manufacturer'[i][2] in user_input:
+        print('manufacturer'[i])
+
+    elif 'manufacturer'[i][1] not in user_input or 'manufacturer'[i][2] in user_input:
 
 
 while True:
