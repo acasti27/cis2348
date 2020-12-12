@@ -6,6 +6,13 @@ import csv
 # this is for the group of files to append to
 # this dictionary has each list inside of it
 csv_files = {'manufacturer': [], 'prices': [], 'service_dates': []}
+name_list = []
+user_input = []
+item_id = []
+items = False
+manu = False
+types = []
+brand = []
 
 
 # this class will be for reading the files
@@ -45,11 +52,21 @@ user_input = user_input.split()
 print(user_input)
 # taking those two and searching for them within the manufacturer list in the dictionary
 for i in range(len(user_input)):
-    if 'manufacturer'[i][1] in user_input and 'manufacturer'[i][2] in user_input:
-        print('manufacturer'[i])
+    if 'manufacturer'[i][1] in user_input:
+        manu = True
+    if 'manufacturer'[i][2] in user_input:
+        items = True
 
-    elif 'manufacturer'[i][1] not in user_input or 'manufacturer'[i][2] in user_input:
-
+if manu is True and items is True:
+    for i in range(len(user_input)):
+        if 'manufacturer'[i][1] in user_input and 'manufacturer'[i][2] in user_input:
+            print('manufacturer'[i])
+            if 'manufacturer'[i][3] == 'damaged':
+                print('This item item is damaged.')
+            else:
+                item_id.append('manufacturer[1][0]')
+else:
+    print('This item is not in our inventory.\n')
 
 while True:
     # this will ask the user to search again or quit
