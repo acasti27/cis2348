@@ -47,7 +47,7 @@ print(csv_files)
 
 # prompting the user to enter a manufacturer name and item type
 user_input = input('Please enter manufacturer and item type:\n')
-# this will spilit that input into to separate variables
+# this will split that input into to separate variables
 user_input = user_input.split()
 print(user_input)
 # taking those two and searching for them within the manufacturer list in the dictionary
@@ -56,25 +56,39 @@ for i in range(len(user_input)):
         manu = True
     if 'manufacturer'[i][2] in user_input:
         items = True
-
+# this is to check whether or not the item is damaged, I opted to display a message in place in case it is
 if manu is True and items is True:
     for i in range(len(user_input)):
         if 'manufacturer'[i][1] in user_input and 'manufacturer'[i][2] in user_input:
             print('manufacturer'[i])
             if 'manufacturer'[i][3] == 'damaged':
-                print('This item item is damaged.')
+                isDamaged = True
+                print("This item is damaged. \n")
+                break
+            # if the item is not damaged, then the idea is to store the information into the list
             else:
-                item_id.append('manufacturer[1][0]')
+                item_id.append('manufacturer'[i][0])
+                brand.append('manufacturer'[i][1])
+                types.append('manufacturer'[i][2])
+                print('items have been copied\n')
 else:
     print('This item is not in our inventory.\n')
 
+if isDamaged == False:
+    for i in range(len('manufacturer')):
+        # finds info of item
+        if 'manufacturer'[i][0] in item_id:
+            print('manufacturer'[i])
+        # finds price of item
+        if 'prices'[i][0] in item_id:
+            print('prices'[i])
 while True:
     # this will ask the user to search again or quit
     print('\nWould you like to search for something else?\ny - yes\nq - quit')
     option = input('Please select an option:\n')
     # this will prompt the user to search for something else again
     if option == 'y':
-        print(CSVReader)
+        print()
     # this will quit the program
     if option == 'q':
         break
