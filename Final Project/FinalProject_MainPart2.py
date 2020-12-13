@@ -88,7 +88,7 @@ while loop:
                 # finds info of item
                     if manufacturer[i][0] in item_id:
                          print(manufacturer[i])
-    # finds price of item
+                    # finds price of item
                     if prices[i][0] in item_id:
                         print('prices'[i])
 
@@ -98,6 +98,7 @@ while loop:
     print('\nWould you like to search for something else?\ny - yes\nq - quit')
     option = input('Please select an option:\n')
     # this will prompt the user to search for something else again
+    # the only way I could figure out how to loop everything back to the beginning in order to query the user again
     if option == 'y':
         csv_files = []
         manufacturer = []
@@ -113,9 +114,11 @@ while loop:
         loop = True
         types = []
         brand = []
+    # this quits the program
     elif option == 'q':
         loop is False
         break
+    # in the event that something else is accidentally input, this will just quit the program
     else:
         print('That is not an option. Goodbye.')
         break
